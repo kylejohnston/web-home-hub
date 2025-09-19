@@ -1,0 +1,131 @@
+<!-- TO-DO:
+  - FIX SPACING BETWEEN TEXT BLOCKS
+  - PAGE TITLE, METADATA, ETC.
+  - CLEAN UP & ORGANIZE CSS
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Home Hub · Merch Card Previewer</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="page-header">
+    <h1>Home Hub · Merch Card Previewer</h1>
+  </header>
+  
+  <main class="container">
+<!-- TOP CONTROLS -->
+    <section class="controls">
+      <div class="dropzone card" id="dropzone" tabindex="0">
+        <p class="dropzone__title">Drop image here, click to select, or paste from clipboard</p>
+        <p class="dropzone__hint">Supports JPG, PNG, GIF, and WebP formats</p>
+        <div class="dropzone__preview">
+          <div class="preview-icon" aria-hidden="true">🖼️</div>
+        </div>
+        <input id="fileInput" type="file" accept="image/*" hidden>
+      </div>
+      
+      <aside class="side-panel card">
+        <label class="field">
+          <span class="field__label">HEX:</span>
+          <input class="field__input" id="hexInput" type="text" placeholder="FFC445" inputmode="text" />
+        </label>
+        <p class="side-panel__hint">Click on any card below<br/>to edit the text</p>
+        <button id="resetTextBtn" type="button" style="margin-top:14px;width:100%;padding:8px 0;border-radius:8px;background:#eee;border:1px solid #ccc;font-size:15px;cursor:pointer;">Reset all text blocks</button>
+      </aside>
+    </section>
+    
+    <section class="cards-row">
+      
+<!-- 4X5 CARDS WITH VISUALS -->
+      <div class="card card--img card--4x5 card--h360">
+        <div class="card-body">
+          <div class="placeholder">
+            <span>Image placeholder</span>
+          </div>
+          <div class="cta cta--footer">
+            <h2 class="editable title--large" data-group="img-4x5" data-key="title" tabindex="0">Special finds up to 40% off</h2>
+            <p class="editable title--base" data-group="img-4x5" data-key="cta" tabindex="0">Card CTA</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card card--img card--4x5 card--h220">
+        <div class="card-body">
+          <div class="placeholder">
+            <span>Image placeholder</span>
+          </div>
+          <div class="cta cta--footer">
+            <h2 class="editable title--base" data-group="img-4x5" data-key="title" tabindex="0">Special finds up to 40% off</h2>
+            <p class="editable title--small" data-group="img-4x5" data-key="cta" tabindex="0">Card CTA</p>
+          </div>
+        </div>
+      </div>
+      
+<!-- 4X5 CARDS, TEXT ONLY -->
+      <div class="card card--cta card--4x5 card--h360">
+        <div class="cta cta--center">
+          <div>
+            <h2 class="editable title--larger" data-group="cta-4x5" data-key="title" tabindex="0">Main headline</h2>
+            <h3 class="editable body--base" data-group="cta-4x5" data-key="subtitle" tabindex="0">Secondary text</h3>
+          </div>
+          <p  class="editable title--base" data-group="cta-4x5" data-key="cta" tabindex="0">Card CTA</p>
+        </div>
+      </div>
+      
+      <div class="card card--cta card--4x5 card--h220">
+        <div class="cta cta--center cta--small">
+          <div>
+            <h2 class="editable title--large" data-group="cta-4x5" data-key="title" tabindex="0">Main headline</h2>
+            <h3 class="editable body--base" data-group="cta-4x5" data-key="subtitle" tabindex="0">Secondary text</h3>
+          </div>
+          <p  class="editable title--base" data-group="cta-4x5" data-key="cta" tabindex="0">Card CTA</p>
+        </div>
+      </div>
+    </section>
+    
+    <section class="cards-row cards-row--bottom">
+<!-- WIDE CARDS -->
+<!-- TO-DO:
+  - FIX THE FLEX SPACING BETWEEN ELEMENTS
+  - MAKE LEGAL TEXT HIDE IF EMPTY
+-->
+      <div class="card card--wide card--h360">
+        <div class="wide-content cta">
+            <div>
+              <h2 class="editable title--larger" data-group="wide" data-key="title" tabindex="0">Main headline</h2>
+              <h3 class="editable body--base" data-group="wide" data-key="subtitle" tabindex="0">Secondary text</h3>
+            </div>
+            <div>
+              <p  class="editable title--large" data-group="wide" data-key="cta" tabindex="0">Card CTA</p>
+              <p  class="editable body--smaller" data-group="wide" data-key="legal" tabindex="0">Optional legal disclaimer. Hide if empty</p>
+            </div>
+        </div>
+        <div class="wide-image placeholder" aria-label="Image placeholder"></div>
+      </div>
+      <div class="card card--promo card--h220">
+        <div class="cta cta--center">
+          <div>
+            <h2 class="editable title--large" data-group="wide" data-key="title" tabindex="0">Main headline</h2>
+            <h3 class="editable body--base" data-group="wide" data-key="subtitle" tabindex="0">Secondary text</h3>
+          </div>
+          <div>
+            <p  class="editable title--base" data-group="wide" data-key="cta" tabindex="0">Card CTA</p>
+            <p  class="editable body--smaller" data-group="wide" data-key="legal" tabindex="0">Optional legal disclaimer. Hide if empty</p>
+          </div>
+        </div>
+        <div class="promo-image placeholder"></div>
+      </div>
+    </section>
+  </main>
+  
+  <script src="./app.js"></script>
+</body>
+</html>
